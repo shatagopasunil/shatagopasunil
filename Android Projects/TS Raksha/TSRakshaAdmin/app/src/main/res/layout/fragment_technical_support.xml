@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".TechnicalSupport" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view_control_numbers"
+        android:id="@+id/helpline_recycler" />
+
+    <Button
+        android:id="@+id/view_control_numbers"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/blue"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:text="Control Room Numbers"/>
+
+    <ImageButton
+        android:id="@+id/add_new_helpline"
+        android:soundEffectsEnabled="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/colorAccent"
+        android:src="@drawable/add_new"
+        android:scaleType="centerCrop" />
+</RelativeLayout>
+

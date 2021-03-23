@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "863714960097",
+    "firebase_url": "https://crimeregistration-66011.firebaseio.com",
+    "project_id": "crimeregistration-66011",
+    "storage_bucket": "crimeregistration-66011.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863714960097:android:e5a13751bf5b1b826e8da0",
+        "android_client_info": {
+          "package_name": "com.sunil45.crimeregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863714960097-atea2rjr99k5btjb2l61vaduhemsu7r7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sunil45.crimeregistration",
+            "certificate_hash": "8ede9fdaac0adb23a817951e09eda57496f82e93"
+          }
+        },
+        {
+          "client_id": "863714960097-lo0hagn13octr2dm0uq4vnnt3qusktpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw6Rkmu2cB0FWLPZk-KUncoBgdqKqCapU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863714960097-lo0hagn13octr2dm0uq4vnnt3qusktpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

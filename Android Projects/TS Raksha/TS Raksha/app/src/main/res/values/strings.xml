@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">TS Raksha</string>
+    <string name="country_code" translatable="false">+91</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="login_button">Login</string>
+    <string name="verify_button">Verify</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="welcome_text">Welcome</string>
+    <string name="resend_otp">Resend OTP ?</string>
+    <string name="invalid_otp">Invalid OTP</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="error_try_after_some_time">Error ! Try Again</string>
+    <string name="otp_sent_to_mobile">OTP sent to your mobile</string>
+    <string name="install_latest_google_play">Install latest GooglePlay Services and Try again</string>
+    <string name="enter_valid_mobile_number">Enter valid mobile number</string>
+    <string name="too_may_attempts">You have attempted too many login requests\\nTry Again Later</string>
+    <string name="you_entered">You entered</string>
+    <string name="is_this_ok">Is this OK, or would you like to edit the number?</string>
+    <string name="ok">OK</string>
+    <string name="authenticating">Please wait, while we are authenticating with your phone</string>
+    <string name="edit">Edit</string>
+    <string name="verifying_otp">Please wait, while we are verifying code that has been sent to your phone</string>
+    <string name="verifying_mobile_number">Verifying your mobile number</string>
+    <string name="try_again_later">Try again later</string>
+    <string name="version" translatable="false">Version</string>
+    <string name="open" translatable="false">Open navigation drawer</string>
+    <string name="close" translatable="false">Close navigation drawer</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="gender">Gender :</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="age">Age</string>
+    <string name="save">Save</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_age">Enter age</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="profile_updated">Profile updated successfully.....</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="telangana">Telangana</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="no_info" translatable="false">-----</string>
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="deceased">Deceased</string>
+    <string name="india">India</string>
+    <string name="global">Global</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout">Do you want to  logout from the application?</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="isolation_centers">Isolation Centers</string>
+    <string name="government">Government</string>
+    <string name="privates">Private</string>
+    <string name="address">Address</string>
+    <string name="nearest_isolation">Nearest Isolation Center</string>
+    <string name="covid_self_assessment">COVID-19 Self Assessment</string>
+    <string name="contribute">Contribute</string>
+    <string name="latest_info">Latest Info</string>
+    <string name="government_orders">Government Orders</string>
+    <string name="video_updates">Video Updates</string>
+    <string name="health_facilities">Health Facilities</string>
+    <string name="testing_centers">Testing Centers</string>
+    <string name="support">Support</string>
+    <string name="language">Language</string>
+    <string name="technical_support">Technical Support</string>
+    <string name="faqs">FAQ\'s</string>
+    <string name="logout_button">Logout</string>
+    <string name="near_by_center">Nearby Center</string>
+    <string name="view_all_in_maps">Maps View</string>
+    <string name="home_quarantine">Home Quarantine</string>
+    <string name="rt" translatable="false">RT-PCR / CBNAAT / TRUENAT</string>
+    <string name="anti" translatable="false">RAPID ANTIGEN TESTING CENTRES</string>
+    <string name="type_test">Type of Test :</string>
+    <string name="telugu_guide" translatable="false">Guidelines for Home Isolation(Telugu)</string>
+    <string name="english_guide" translatable="false">Guidelines for Home Isolation(English)</string>
+    <string name="english" translatable="false">English</string>
+    <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="telugu" translatable="false">తెలుగు</string>
+    <string name="government_private">Government / Private</string>
+    <string name="fetching_nearest">Please wait, while we are fetching your nearest isolation center</string>
+    <string name="api_key" translatable="false">AIzaSyC6Hvmdus0-AJx8odiiG4QN9IvzIz07MRI</string>
+    <string name="turn_on_gps">Please turn on location in your mobile and Try Again</string>
+    <string name="read_loc_error">Error in getting location. Restart the app and Try again.</string>
+    <string name="title_activity_place_status" translatable="false">Map</string>
+    <string name="offline_donate">Donate to CM Relief Fund by Offline</string>
+    <string name="offline_address">Send a Cheque on the name of "CM Relief Fund, Telangana State", to the following address:</string>
+    <string name="online_donate">Donate to CM Relief Fund by Online Transfer:</string>
+    <string name="donate_cm">Donate to CM Relief Fund</string>
+    <string name="scan_pay">Scan and pay</string>
+    <string name="account_details">Account Details</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_email">Enter email</string>
+    <string name="valid_email">Enter valid email address</string>
+    <string name="enter_reason">Enter reason</string>
+    <string name="submit_request">Please wait, while we are submitting your request</string>
+    <string name="submit_already">Your request has been submitted already…</string>
+    <string name="submit_success">Your request has been submitted successfully…</string>
+    <string name="upload_location">Do you want to upload your location?</string>
+    <string name="uploading_location">Please wait,while we are uploading your location…</string>
+    <string name="location_success">Your location has been submitted successfully…</string>
+    <string name="settings">Settings</string>
+    <string name="donate_cheque">Donate Cheque</string>
+    <string name="donate_website">Donate through Website</string>
+    <string name="updated_dash">Updated @ %s on %s</string>
+    <string name="denied_location">You have denied location permission. So please GRANT permission in Settings…</string>
+    <string name="tracing_mode">Tracing Mode</string>
+    <string name="covid_portal">COVID-19 POSITIVE PORTAL</string>
+    <string name="status_location">Status of your location</string>
+    <string name="tracing_time">Tracing time interval :</string>
+    <string name="tracing_distance">Tracing distance :</string>
+    <string name="search">Search</string>
+    <string name="enter_distance">Enter distance (in mtrs)</string>
+    <string name="around_cases">This will give you the positive cases around you within the given range</string>
+    <string name="sa_description">This tool will help you assess your symptoms and determine if you\'re a good candidate for a coronavirus disease 2019 (COVID-19) test in your home community.</string>
+    <string name="continues">Continue</string>
+    <string name="emergency">EMERGENCY</string>
+    <string name="loc_upload">Upload Location</string>
+    <string name="covid_qas">COVID-19 Questions and Answers</string>
+    <string name="click_here">Click here</string>
+    <string name="loc_mod_rem">For modification or removal of your location</string>
+    <string name="read_faqs_here">Read FAQs on COVID-19 coronavirus here</string>
+    <string name="follow_home">Follow home quarantine instructions here</string>
+    <string name="suffering">If you are suffering from COVID-19 positive, then upload your location</string>
+    <string name="tracing_running">TS Raksha tracing mode is running</string>
+    <string name="distance_ten">Enter value upto 10 kms</string>
+    <string name="retrieve_cases">Please wait while we are fetching cases around you…</string>
+    <string name="show_casing">%d cases found around you within range %d meters</string>
+    <string name="continue_sa">Select language to continue COVID-19 Self Assessment</string>
+    <string name="home">Home</string>
+    <string name="control_numbers">Control Room Numbers</string>
+    <string name="modify">Modify</string>
+    <string name="removal">Removal</string>
+    <string name="invalid_reas">Invalid reason leads to rejection of this request.\nYou will be contacted through provided email or registered mobile number.</string>
+</resources>

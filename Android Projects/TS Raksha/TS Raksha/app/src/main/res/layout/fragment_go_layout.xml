@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context=".GoLayout">
+
+    <LinearLayout
+        android:background="@drawable/assessment_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/pdf_title"
+        android:layout_margin="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="5dp"/>
+
+        <ImageButton
+            android:id="@+id/pdf_close_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/holo_red_light"
+            android:src="@drawable/ic_close_black_24dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/pdf_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</LinearLayout>

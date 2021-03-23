@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:title="@string/dashboard" />
+        <item
+            android:id="@+id/update_cases"
+            android:title="@string/update_cases" />
+        <item android:id="@+id/faqs"
+            android:title="@string/faqs"/>
+        <item android:id="@+id/technical_support"
+            android:title="@string/technical_support"/>
+    </group>
+
+    <item android:title="Health Facilities">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/isolation_centers"
+                    android:title="@string/isolation_centers" />
+                <item
+                    android:id="@+id/quarantine_centers"
+                    android:title="@string/quarantine_centers" />
+                <item
+                    android:id="@+id/testing_centers"
+                    android:title="@string/testing_centers" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Latest Info">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/government_orders"
+                    android:title="@string/government_orders" />
+                <item
+                    android:id="@+id/video_updates"
+                    android:title="@string/video_updates" />
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

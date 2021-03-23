@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">CrimeRegistration</string>
+    <string name="username">Enter Mobile Number</string>
+    <string name="loginbutton">LOGIN</string>
+    <string name="otp">Enter OTP</string>
+    <string name="verifybutton">Verify</string>
+    <string name="full_name">Full Name</string>
+    <string name="submit">SUBMIT</string>
+    <string name="email">Email</string>
+    <string name="gender">Gender :</string>
+    <string name="e_male">Male</string>
+    <string name="t_female">Female</string>
+    <string name="t_others">Others</string>
+    <string name="home_matter"><p>This application is to facilitate victims/complainants to report  crime complaints online. This application caters to complaints pertaining to crimes only with special focus on crimes against women. Complaints reported on this application are dealt by law enforcement agencies/ police based on the information available in the complaints. It is imperative to provide correct and accurate details while filing complaint for prompt action.\n\n\n
+        <b>Please contact local police in case of an emergency or for reporting crimes other than cyber crimes. National police helpline number is 100. National women helpline number is 181.</b></p></string>
+    <string name="age">Age</string>
+    <string name="click_tracking_complaint"><u>Click here to track your complaint</u></string>
+    <string name="enter">Enter for help</string>
+    <string name="source_help">Source of Help</string>
+    <string name="file_complaint">File a complaint</string>
+    <string name="complaint"><u>Complaint / Incident Details</u></string>
+    <string name="track_complaint">Track Complaint</string>
+    <string name="pan">Enter Aadhar Number</string>
+    <string name="sos">SOS</string>
+
+    <string-array name="complaint_category">
+        <item>--Select--</item>
+        <item>Missing Case</item>
+        <item>Attempt Murder</item>
+        <item>Accident Case</item>
+        <item>Kidnap Case</item>
+        <item>Pornography</item>
+        <item>Others</item>
+    </string-array>
+</resources>

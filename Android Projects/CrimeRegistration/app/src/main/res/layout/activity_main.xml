@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_above="@id/relativeId"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:paddingBottom="60dp"
+        android:textColor="#6A1579"
+        android:textStyle="bold"
+        android:typeface="serif" />
+    <RelativeLayout
+        android:id="@+id/relativeId"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/mobileLinearId"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 "
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"></TextView>
+                <EditText
+                    android:id="@+id/mobileNumberEditText"
+                    android:textColorHint="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:hint="@string/username"
+                    android:maxLength="10"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:inputType="number"></EditText>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/mobileNumberNextEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"
+                android:text="@string/loginbutton"></Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/verifyLinearId"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/verifyNumberEditText"
+                android:textColorHint="@android:color/black"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/otp"
+                android:layout_gravity="center"
+                android:maxLength="6"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="number"></EditText>
+
+
+            <Button
+                android:id="@+id/verifyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"
+                android:text="@string/verifybutton"></Button>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

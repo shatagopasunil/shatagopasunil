@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IsolationCentersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/select_isolation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/government"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/government"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/privates"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/privates"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/isolation_centers_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/add_new"
+        android:soundEffectsEnabled="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/colorAccent"
+        android:src="@drawable/add_new"
+        android:scaleType="centerCrop" />
+
+</FrameLayout>

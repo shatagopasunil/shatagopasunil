@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/home"/>
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/dashboard_icon"
+            android:title="@string/dashboard" />
+
+        <item android:id="@+id/self_assessment"
+            android:icon="@drawable/self_assessment_icon"
+            android:title="@string/covid_self_assessment"/>
+        <item
+            android:id="@+id/contribute"
+            android:icon="@drawable/contribute_icon"
+            android:title="@string/contribute" />
+    </group>
+
+
+    <item android:title="@string/latest_info">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/government_orders"
+                    android:icon="@drawable/go_icon"
+                    android:title="@string/government_orders" />
+                <item
+                    android:id="@+id/video_updates"
+                    android:icon="@drawable/video_updates_icon"
+                    android:title="@string/video_updates" />
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="@string/health_facilities">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/home_quarantine"
+                    android:icon="@drawable/home_quarantine"
+                    android:title="@string/home_quarantine"/>
+                <item
+                    android:id="@+id/isolation_centers"
+                    android:icon="@drawable/isolation_centers"
+                    android:title="@string/isolation_centers" />
+                <item
+                    android:id="@+id/testing_centers"
+                    android:icon="@drawable/testing_centers_icon"
+                    android:title="@string/testing_centers" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/support">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/technical_support"
+                android:icon="@drawable/technical_support_icon"
+                android:title="@string/technical_support" />
+            <item
+                android:id="@+id/faqs"
+                android:icon="@drawable/faqs_icon"
+                android:title="@string/faqs" />
+            </group>
+            <item
+                android:id="@+id/language"
+                android:icon="@drawable/language_icon"
+                android:title="@string/language" />
+            <item
+                android:id="@+id/edit_profile"
+                android:icon="@drawable/edit_profile_icon"
+                android:title="@string/edit_profile" />
+            <item
+                android:icon="@drawable/logout_icon"
+                android:id="@+id/logout"
+                android:title="@string/logout_button" />
+        </menu>
+    </item>
+
+</menu>

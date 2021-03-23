@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="The Hospital Management app is used to manage all the operations associated with a Hospital."
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <TextView
+        android:textColor="@android:color/holo_red_dark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:gravity="center"
+    android:text="The different modules covered in this app are: Doctors, Patients, Staff members, Desktop_admin"
+    android:textSize="30dp"
+    android:textStyle="bold" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Developed by : "
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="10dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="S. Sunil(19075A0518)\nG. Jeevan(19075A0514)\nA. Nithin(18071A05C1)\nK. Santhosh(18071A05E5)\nB. Ketan(18071A05E7)\nC. SaiKiran(18071A05D4)\n"
+        android:textSize="25sp" />
+
+    </LinearLayout>
+
+</ScrollView>

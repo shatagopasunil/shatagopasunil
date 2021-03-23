@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/select_english"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_height="wrap_content"
+        android:soundEffectsEnabled="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/button_background"
+        android:text="@string/english">
+    </Button>
+
+    <Button
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/select_hindi"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:soundEffectsEnabled="true"
+        android:textStyle="bold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/button_background"
+        android:text="@string/hindi">
+    </Button>
+
+    <Button
+        android:backgroundTint="@color/blue"
+        android:id="@+id/select_telugu"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:soundEffectsEnabled="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/button_background"
+        android:text="@string/telugu">
+    </Button>
+
+
+</LinearLayout>

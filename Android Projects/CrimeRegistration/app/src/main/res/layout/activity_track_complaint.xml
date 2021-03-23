@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context=".TrackComplaintActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Status of Complaint"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Tracking-Id : "
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/tracking_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="Tracking-Id"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp"
+                android:text="Category : "
+                android:textStyle="bold"></TextView>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:id="@+id/complaint_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:text="Category"
+            android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+            <ProgressBar
+                android:background="@drawable/shape"
+                android:progressTint="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress_bar"
+                android:progress="50"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+            </ProgressBar>
+            <TextView
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50%"></TextView>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Status :"
+                android:textColor="@android:color/black"></TextView>
+            <LinearLayout
+                android:background="@drawable/shape"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:paddingLeft="30dp"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="-->"></TextView>
+                <TextView
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Started Investigation"></TextView>
+            </LinearLayout>
+        <TextView
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your complaint has been registered on 11/02/2019 at 12:00 pm.Case has been taken by P.Madhu SI of Panjagutta police station. We have enquired all the suspects in that locality."></TextView>
+
+        </LinearLayout>
+</LinearLayout>

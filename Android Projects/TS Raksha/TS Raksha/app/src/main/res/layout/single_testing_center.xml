@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+  <LinearLayout
+      android:padding="10dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <TextView
+        android:textColor="@android:color/black"
+        android:id="@+id/testing_center_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+      <TextView
+          android:textSize="15sp"
+          android:text="@string/type_test"
+          android:fontFamily="sans-serif"
+          android:textColor="@android:color/black"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+      <TextView
+          android:layout_marginLeft="5dp"
+          android:id="@+id/type_of_test"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif"
+          android:textColor="@android:color/black"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+    </LinearLayout>
+  </LinearLayout>
+
+</androidx.cardview.widget.CardView>

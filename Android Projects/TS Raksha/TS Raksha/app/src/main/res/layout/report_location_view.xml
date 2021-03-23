@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/report_location_group"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/modify_location"
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/modify"/>
+
+        <RadioButton
+            android:id="@+id/removal_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/removal"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/reason_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_reason"
+        android:textColor="@android:color/black"
+        android:lines="3"/>
+
+    <EditText
+        android:id="@+id/email_location"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_email"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="@string/invalid_reas"
+        android:textSize="16sp"/>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/enter_hosp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hospital_name"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/enter_hosp_address"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:inputType="textCapWords"
+        android:hint="@string/hospital_address" />
+
+    <EditText
+        android:id="@+id/enter_hosp_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hospital_location" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/enter_hosp_latitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hospital_latitude"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/enter_hosp_longitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hospital_longitude"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+</LinearLayout>
