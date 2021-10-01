@@ -132,11 +132,11 @@ public class ProfileActivity extends AppCompatActivity {
                     rootRef.child("Age").setValue(sAge);
                     rootRef.child("Gender").setValue(rButton.getText());
                     loadingBar.dismiss();
-                    sendUserToMainActivity();
+                    sendUserToHomeActivity();
                 }
             }
 
-            private void sendUserToMainActivity() {
+            private void sendUserToHomeActivity() {
                 Toast.makeText(ProfileActivity.this, "Welcome..", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
                 startActivity(intent);
