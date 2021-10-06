@@ -35,6 +35,7 @@ public class ViewMembers extends AppCompatActivity {
         currentUserId = mAuth.getCurrentUser().getUid();
         memberText = (TextView) findViewById(R.id.member_text);
         sosReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserId).child("SosList");
+        sosReference.keepSynced(true);
     }
 
     @Override
