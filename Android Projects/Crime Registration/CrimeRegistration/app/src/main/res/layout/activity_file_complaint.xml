@@ -41,13 +41,13 @@
 
         </LinearLayout>
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Enter category"
-    android:inputType="textCapWords"
-    android:id="@+id/other_category"
-    android:visibility="invisible"></EditText>
+        <EditText
+            android:id="@+id/other_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter category"
+            android:inputType="textCapWords"
+            android:visibility="gone"></EditText>
 
         <TextView
             android:layout_marginTop="20dp"

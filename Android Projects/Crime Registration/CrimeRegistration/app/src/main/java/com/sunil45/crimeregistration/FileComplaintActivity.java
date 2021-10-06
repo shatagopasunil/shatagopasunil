@@ -1,5 +1,6 @@
 package com.sunil45.crimeregistration;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -16,17 +17,20 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class FileComplaintActivity extends AppCompatActivity {
     private Spinner spinner;
     private FirebaseAuth myAuth;
-    private DatabaseReference rootRef;
-    private String date,time,categoryComplaint,ampm;
+    private DatabaseReference userRef, complaintRef;
+    private String date,time,categoryComplaint,ampm, uid;
     private Calendar c;
     private EditText otherCategory,address,mVictim,addInfo;
     private Button dateSelector,timeSelector;
@@ -39,10 +43,11 @@ public class FileComplaintActivity extends AppCompatActivity {
         setContentView(R.layout.activity_file_complaint);
         c=Calendar.getInstance();
         myAuth=FirebaseAuth.getInstance();
-        String uid=myAuth.getCurrentUser().getUid();
+        uid=myAuth.getCurrentUser().getUid();
         otherCategory=(EditText)findViewById(R.id.other_category);
         addInfo=(EditText)findViewById(R.id.add_info);
-        rootRef= FirebaseDatabase.getInstance().getReference().child("Complaints").child(uid).push();
+        complaintRef = FirebaseDatabase.getInstance().getReference().child("Complaints").push();
+        userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Complaints");
         loadingBar = new ProgressDialog(this);
         address=(EditText)findViewById(R.id.address);
         spinner=(Spinner)findViewById(R.id.category_complaint);
@@ -101,7 +106,7 @@ public class FileComplaintActivity extends AppCompatActivity {
                 if(adapterView.getSelectedItem().toString().equals("Others"))
                     otherCategory.setVisibility(View.VISIBLE);
                 else
-                    otherCategory.setVisibility(View.INVISIBLE);
+                    otherCategory.setVisibility(View.GONE);
             }
 
             @Override
@@ -140,16 +145,41 @@ public class FileComplaintActivity extends AppCompatActivity {
             loadingBar.setCancelable(false);
             loadingBar.show();
             loadingBar.setMessage("Please wait while filing your complaint");
-            rootRef.child("Category").setValue(categoryComplaint);
-            rootRef.child("Date").setValue(date);
-            rootRef.child("Time").setValue(time);
-            rootRef.child("Victim").setValue(victim);
-            rootRef.child("Address").setValue(add);
-            rootRef.child("Additional").setValue(addInformation);
-            loadingBar.dismiss();
-            Toast.makeText(this, "Data Submitted Successfully....", Toast.LENGTH_SHORT).show();
-            finish();
-            startActivity(new Intent(FileComplaintActivity.this,HomeActivity.class));
+            final HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("category", categoryComplaint);
+            hashMap.put("date", date);
+            hashMap.put("time", time);
+            hashMap.put("address", add);
+            hashMap.put("victim", victim);
+            hashMap.put("additional", addInformation);
+            hashMap.put("userid", uid);
+            HashMap<String, Object> statusMap = new HashMap<>();
+            statusMap.put("1", "Complaint Registered");
+            statusMap.put("progress", 0);
+            hashMap.put("Status", statusMap);
+            userRef.child(complaintRef.getKey()).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        complaintRef.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(FileComplaintActivity.this, "Data Submitted Successfully....", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(FileComplaintActivity.this,HomeActivity.class));
+                                    finish();
+                                }else{
+                                    Toast.makeText(FileComplaintActivity.this, "Something error occured", Toast.LENGTH_SHORT).show();
+                                }
+                                loadingBar.dismiss();
+                            }
+                        });
+                    }else{
+                        Toast.makeText(FileComplaintActivity.this, "Something error occurred.", Toast.LENGTH_SHORT).show();
+                        loadingBar.dismiss();
+                    }
+                }
+            });
         }
     }
 }
