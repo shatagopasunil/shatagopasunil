@@ -35,4 +35,8 @@ public class MainActivity extends AppCompatActivity {
     public void showComplaints(View view) {
         startActivity(new Intent(this, ShowComplaintsActivity.class));
     }
+
+    public void showReports(View view) {
+        startActivity(new Intent(this, ShowReportsActivity.class));
+    }
 }

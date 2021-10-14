@@ -15,4 +15,11 @@
         android:text="Show Complaints"
         android:onClick="showComplaints"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Show Reports"
+        android:onClick="showReports"/>
+
 </LinearLayout>
