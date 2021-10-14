@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private ProgressDialog loadingBar;
     private LinearLayout mMobileId,mVerifyId;
-    private String verificationCode;
+    private String verificationCode, phoneNumber;
     private DatabaseReference rootRef;
 
     @Override
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String phoneNumber = mPhoneNumber.getText().toString();
+                phoneNumber = mPhoneNumber.getText().toString();
                 if (phoneNumber.isEmpty())
                     Toast.makeText(MainActivity.this, "Please enter Phone Number", Toast.LENGTH_SHORT).show();
                 else if (phoneNumber.length() != 10)
@@ -134,8 +135,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     String uid=myAuth.getCurrentUser().getUid();
-                    rootRef.child("Users").child(uid).setValue("");
                     loadingBar.dismiss();
+                    SharedPreferences.Editor editor = HomeActivity.sharedPreferences.edit();
+                    editor.putString("mobile", phoneNumber);
+                    editor.apply();
                     Intent intent=new Intent(MainActivity.this,ProfileActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

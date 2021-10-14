@@ -64,6 +64,7 @@ public class SosActivity extends AppCompatActivity {
         myAuth = FirebaseAuth.getInstance();
         String uid = myAuth.getCurrentUser().getUid();
         sosReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("SosList");
+        sosReference.keepSynced(true);
         mp = MediaPlayer.create(SosActivity.this, R.raw.sample);
         sosBtn = (ImageView) findViewById(R.id.soSButton);
         alertTv = (TextView) findViewById(R.id.alert_text);

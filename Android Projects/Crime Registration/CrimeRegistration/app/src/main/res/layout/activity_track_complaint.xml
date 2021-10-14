@@ -80,6 +80,33 @@
             android:text="Category"
             android:textStyle="bold"></TextView>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#00f"
+                android:textSize="18sp"
+                android:text="Location : "
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/location_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="#00f"
+                android:textSize="18sp"
+                android:text="Location"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
 
             <ProgressBar
                 android:background="@drawable/shape"
@@ -87,15 +114,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/progress_bar"
-                android:progress="50"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal">
             </ProgressBar>
             <TextView
+                android:id="@+id/display_progress"
                 android:layout_gravity="center"
                 android:textSize="18sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="50%"></TextView>
+                android:layout_height="wrap_content"></TextView>
             <TextView
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
@@ -110,23 +136,20 @@
                 android:layout_marginBottom="20dp"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/display_status"
                     android:paddingLeft="30dp"
                     android:textSize="18sp"
+                    android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:text="-->"></TextView>
-                <TextView
-                    android:textSize="18sp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Started Investigation"></TextView>
+                    android:textColor="@android:color/black"/>
             </LinearLayout>
         <TextView
+            android:id="@+id/date_time_display"
             android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your complaint has been registered on 11/02/2019 at 12:00 pm.Case has been taken by P.Madhu SI of Panjagutta police station. We have enquired all the suspects in that locality."></TextView>
+            android:text="Your complaint has been registered on "></TextView>
 
         </LinearLayout>
 </LinearLayout>

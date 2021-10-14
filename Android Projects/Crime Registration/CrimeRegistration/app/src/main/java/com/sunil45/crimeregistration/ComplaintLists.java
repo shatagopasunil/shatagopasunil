@@ -1,6 +1,7 @@
 package com.sunil45.crimeregistration;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -20,8 +21,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class ComplaintLists extends AppCompatActivity {
     private LinearLayout complaintLayout;
@@ -38,60 +42,70 @@ public class ComplaintLists extends AppCompatActivity {
         loadingBar.setCancelable(false);
         loadingBar.setMessage("Please wait while fetching your complaints..");
         loadingBar.show();
-        headingComplaint=(TextView)findViewById(R.id.complaints_heading);
-        complaintLayout=(LinearLayout)findViewById(R.id.complaint_layout);
-        myAuth=FirebaseAuth.getInstance();
-        String uid=myAuth.getCurrentUser().getUid();
-        rootRef= FirebaseDatabase.getInstance().getReference().child("Complaints").child(uid);
-        rootRef.addValueEventListener(new ValueEventListener() {
+        headingComplaint = (TextView) findViewById(R.id.complaints_heading);
+        complaintLayout = (LinearLayout) findViewById(R.id.complaint_layout);
+        myAuth = FirebaseAuth.getInstance();
+        String uid = myAuth.getCurrentUser().getUid();
+        final ArrayList<String> arrayList = new ArrayList<>();
+        rootRef = FirebaseDatabase.getInstance().getReference();
+        rootRef.keepSynced(true);
+        rootRef.child("Users").child(uid).child("Complaints").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists())
-                {
-                    headingComplaint.setText("Complaints List");
-                    showComplaints(dataSnapshot);
-                }
-                else
-                {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long cnt = 0, tcount = dataSnapshot.getChildrenCount();
+                if (!dataSnapshot.exists()) {
                     headingComplaint.setText("No Complaints Found...");
                     loadingBar.dismiss();
+                    return;
+                }
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    ++cnt;
+                    arrayList.add(snapshot.getKey());
+                    if (cnt == tcount) {
+                        headingComplaint.setText("Complaints List");
+                        rootRef.child("Complaints").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (String s : arrayList) {
+                                    showComplaints(dataSnapshot, s);
+                                }
+                                loadingBar.dismiss();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            public void onCancelled(DatabaseError databaseError) {
             }
         });
     }
 
-    private void showComplaints(DataSnapshot dataSnapshot) {
-        for (DataSnapshot child: dataSnapshot.getChildren()) {
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View _itemRow = inflater.inflate(R.layout.new_row,null);
-            final String track_id=child.getKey();
-            String additional=child.child("Additional").getValue().toString();
-            final String address=child.child("Address").getValue().toString();
-            final String category=child.child("Category").getValue().toString();
-            final String date_time=child.child("Date").getValue().toString()+" , "+child.child("Time").getValue().toString();
-            final String victim=child.child("Victim").getValue().toString();
-            ((TextView)_itemRow.findViewById(R.id.tracking_id)).setText(track_id.substring(track_id.length()-4));
-            ((TextView)_itemRow.findViewById(R.id.complaint_category_name)).setText(category);
-            ((TextView)_itemRow.findViewById(R.id.date_time)).setText(date_time);
-            ((TextView)_itemRow.findViewById(R.id.tracking_click)).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(ComplaintLists.this,TrackComplaintActivity.class);
-                    intent.putExtra("track_id",track_id.substring(track_id.length()-4));
-                    intent.putExtra("address",address);
-                    intent.putExtra("category",category);
-                    intent.putExtra("date_time",date_time);
-                    intent.putExtra("victim",victim);
-                    startActivity(intent);
-                }
-            });
-            complaintLayout.addView(_itemRow);
-            loadingBar.dismiss();
-        }
+    private void showComplaints(DataSnapshot dataSnapshot, String s) {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View _itemRow = inflater.inflate(R.layout.new_row, null);
+        String track_id = s;
+        final ComplaintsModel complaintsModel = dataSnapshot.child(s).getValue(ComplaintsModel.class);
+        track_id = track_id.substring(track_id.length() - 4);
+        final String finalTrack = track_id;
+        ((TextView) _itemRow.findViewById(R.id.tracking_id)).setText(track_id);
+        ((TextView) _itemRow.findViewById(R.id.complaint_category_name)).setText(complaintsModel.getCategory());
+        ((TextView) _itemRow.findViewById(R.id.date_time)).setText(complaintsModel.getTime() + ", " + complaintsModel.getDate());
+        ((TextView) _itemRow.findViewById(R.id.tracking_click)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ComplaintLists.this, TrackComplaintActivity.class);
+                intent.putExtra("complaint", (Serializable) complaintsModel);
+                intent.putExtra("track_id", finalTrack);
+                startActivity(intent);
+            }
+        });
+        complaintLayout.addView(_itemRow);
     }
 }

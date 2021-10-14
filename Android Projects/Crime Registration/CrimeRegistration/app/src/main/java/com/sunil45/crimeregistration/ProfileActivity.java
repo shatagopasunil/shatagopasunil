@@ -63,11 +63,31 @@ public class ProfileActivity extends AppCompatActivity {
                 loadingBar.setCancelable(false);
                 loadingBar.setMessage("Verifying Aadhar....");
                 loadingBar.show();
-                aadharReference.addValueEventListener(new ValueEventListener() {
+                aadharReference.child(aadhar).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists())
-                            checkAadhar(dataSnapshot, aadhar);
+                        if (dataSnapshot.exists()){
+                            if(dataSnapshot.child("mobile").getValue(String.class).equals(HomeActivity.sharedPreferences.getString("mobile", ""))){
+                                verifyAadhar.setText("Verified!");
+                                vAadhar.setCursorVisible(false);
+                                vAadhar.setText(aadhar);
+                                vAadhar.setKeyListener(null);
+                                vAadhar.setEnabled(false);
+                                InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                mgr.hideSoftInputFromWindow(vAadhar.getWindowToken(), 0);
+                                verifyAadhar.setEnabled(false);
+                                findViewById(R.id.verify_tick).setVisibility(View.VISIBLE);
+                                loadingBar.dismiss();
+                                Toast.makeText(ProfileActivity.this, "Aadhar Verified Successfully...", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(ProfileActivity.this, "Mobile Number not linked to this aadhar", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+                            }
+                        }else {
+                            vAadhar.setText("");
+                            Toast.makeText(ProfileActivity.this, "Enter valid aadhar number", Toast.LENGTH_SHORT).show();
+                            loadingBar.dismiss();
+                        }
                     }
 
                     @Override
@@ -75,30 +95,6 @@ public class ProfileActivity extends AppCompatActivity {
 
                     }
                 });
-            }
-
-            private void checkAadhar(DataSnapshot dataSnapshot, String aadhar) {
-                Iterator iterator = dataSnapshot.getChildren().iterator();
-                while (iterator.hasNext()) {
-                    String adhar = (String) ((DataSnapshot) iterator.next()).getKey();
-                    if (adhar.equals(aadhar)) {
-                        verifyAadhar.setText("Verified!");
-                        vAadhar.setCursorVisible(false);
-                        vAadhar.setText(adhar);
-                        vAadhar.setKeyListener(null);
-                        vAadhar.setEnabled(false);
-                        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        mgr.hideSoftInputFromWindow(vAadhar.getWindowToken(), 0);
-                        verifyAadhar.setEnabled(false);
-                        findViewById(R.id.verify_tick).setVisibility(View.VISIBLE);
-                        Toast.makeText(ProfileActivity.this, "Aadhar Verified Successfully...", Toast.LENGTH_SHORT).show();
-                    } else {
-                        vAadhar.setText("");
-                        Toast.makeText(ProfileActivity.this, "Enter valid aadhar number", Toast.LENGTH_SHORT).show();
-                    }
-                    loadingBar.dismiss();
-
-                }
             }
         });
         findViewById(R.id.submit_profile).setOnClickListener(new View.OnClickListener() {
@@ -131,6 +127,9 @@ public class ProfileActivity extends AppCompatActivity {
                     rootRef.child("Email").setValue(sEmail);
                     rootRef.child("Age").setValue(sAge);
                     rootRef.child("Gender").setValue(rButton.getText());
+                    SharedPreferences.Editor editor = HomeActivity.sharedPreferences.edit();
+                    editor.putBoolean(HomeActivity.HAS_PROFILE, true);
+                    editor.apply();
                     loadingBar.dismiss();
                     sendUserToHomeActivity();
                 }

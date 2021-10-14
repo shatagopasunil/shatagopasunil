@@ -1,15 +1,17 @@
-package com.sunil45.crimeregadmin;
+package com.sunil45.crimeregistration;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class ComplaintsModel {
+@SuppressWarnings("serial")
+public class ComplaintsModel implements Serializable {
     private String additional, address, category, date, time, userid, victim, pincode;
     private HashMap<String, Object> Status;
 
     public ComplaintsModel() {
     }
 
-    public ComplaintsModel(String pincode, String additional, String address, String category, String date, String time, String userid, String victim, HashMap<String, Object> status) {
+    public ComplaintsModel(String additional, String address, String category, String date, String time, String userid, String victim, HashMap<String, Object> status, String pincode) {
         this.additional = additional;
         this.address = address;
         this.category = category;
