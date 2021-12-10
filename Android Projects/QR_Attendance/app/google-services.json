@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "485775260864",
+    "project_id": "qrattendance-71ec4",
+    "storage_bucket": "qrattendance-71ec4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485775260864:android:fada6abb49f3d740bd0125",
+        "android_client_info": {
+          "package_name": "com.vnrvjiet.qr_attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485775260864-8fnripkcdauheuam1vi3d4h6dpr0vm26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vnrvjiet.qr_attendance",
+            "certificate_hash": "8ede9fdaac0adb23a817951e09eda57496f82e93"
+          }
+        },
+        {
+          "client_id": "485775260864-rts85mq4414dsd4277lbdlured482j7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLAf7coINXrOMdgPF5cZy-I_s-_aPTRN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485775260864-rts85mq4414dsd4277lbdlured482j7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
