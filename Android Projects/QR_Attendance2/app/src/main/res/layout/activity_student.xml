@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back_ground"
+    tools:context=".StudentActivity">
+
+
+    <EditText
+        android:id="@+id/rollnoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:maxLength="10"
+        android:padding="10dp"
+        android:hint="Enter Roll No"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/generateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate QR"/>
+
+    <ImageView
+        android:id="@+id/qrImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

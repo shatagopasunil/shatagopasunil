@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_ground"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".TeacherActivity">
+
+    <TextView
+        android:id="@+id/teacher_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome, "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="50dp"
+        android:gravity="center" />
+
+    <Spinner
+        android:layout_margin="30dp"
+        android:id="@+id/select_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/mark_attendance"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark Attendance"/>
+
+    <Button
+        android:id="@+id/view_attendance"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Attendance"/>
+
+    <Button
+        android:id="@+id/add_students"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Student"/>
+</LinearLayout>

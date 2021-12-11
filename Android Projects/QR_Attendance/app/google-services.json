@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "485775260864",
+    "firebase_url": "https://qrattendance-71ec4-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "qrattendance-71ec4",
     "storage_bucket": "qrattendance-71ec4.appspot.com"
   },
@@ -9,12 +10,12 @@
       "client_info": {
         "mobilesdk_app_id": "1:485775260864:android:fada6abb49f3d740bd0125",
         "android_client_info": {
-          "package_name": "com.vnrvjiet.qr_attendance"
+          "package_name": "com.vnrvjiet.qr_attendance",
         }
       },
       "oauth_client": [
         {
-          "client_id": "485775260864-8fnripkcdauheuam1vi3d4h6dpr0vm26.apps.googleusercontent.com",
+          "client_id": "485775260864-s8qa7c1ehkkbi4839u5ll51gbor58bak.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.vnrvjiet.qr_attendance",
