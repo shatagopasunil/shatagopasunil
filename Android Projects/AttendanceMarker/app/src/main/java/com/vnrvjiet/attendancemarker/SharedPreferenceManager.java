@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 public class SharedPreferenceManager {
     private Context context;
     public static final String MyPREFERENCES = "SharedPreferences";
-    public static final String LAT = "latitude";
-    public static final String LON = "longitude";
+    public static final String IS_TEACHER = "isTeacher";
+    public static final String ROLL_NO = "rollNo";
     private SharedPreferences sharedPreferences;
 
     SharedPreferenceManager(Context context){
@@ -14,25 +14,23 @@ public class SharedPreferenceManager {
         sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
     }
 
-    public String getLat(){
-        return sharedPreferences.getString(LAT, "");
+    public boolean getIsTeacher(){
+        return sharedPreferences.getBoolean(IS_TEACHER, false);
     }
 
-    public SharedPreferenceManager setLat(String val){
+    public SharedPreferenceManager setIsTeacher(boolean val){
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(LAT, val);
+        editor.putBoolean(IS_TEACHER, val);
         editor.apply();
         return this;
     }
-
-    public String getLon(){
-        return sharedPreferences.getString(LON, "");
-    }
-
-    public SharedPreferenceManager setLon(String val){
+    public SharedPreferenceManager setRollNo(String val){
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(LON, val);
+        editor.putString(ROLL_NO, val);
         editor.apply();
         return this;
+    }
+    public String getRollNo(){
+        return sharedPreferences.getString(ROLL_NO, "");
     }
 }

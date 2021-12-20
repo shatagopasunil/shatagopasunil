@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "182425129168",
+    "project_id": "attendancemarker-326f8",
+    "storage_bucket": "attendancemarker-326f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182425129168:android:d5619195cb14f104404ed5",
+        "android_client_info": {
+          "package_name": "com.vnrvjiet.attendancemarker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182425129168-assg84u3dakgrl0pt08365vd5p7fceri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vnrvjiet.attendancemarker",
+            "certificate_hash": "8ede9fdaac0adb23a817951e09eda57496f82e93"
+          }
+        },
+        {
+          "client_id": "182425129168-n8hnakt1j9rf08m9ierl359mjc9udr9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8g57oajcfUR7AzfjAmxFegx7F45oLc3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182425129168-n8hnakt1j9rf08m9ierl359mjc9udr9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
